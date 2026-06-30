@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thompho's Driving School - Pretoria</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#003366',
+                            bluedark: '#002244',
+                            gold: '#eab308',
+                            goldhover: '#ca8a04',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .lightbox-active { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-brand-bluedark text-white text-xs sm:text-sm py-2 px-4 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-white/10">
+        <div class="flex items-center gap-2 flex-wrap justify-center text-center">
+            <span class="text-brand-gold">⭐</span>
+            <span>Rated 4.8/5 by 115+ Students | K53 Driving Lessons | Learner's Licence Assistance | Driving Test Prep</span>
+        </div>
+        <a href="tel:0127721616" class="flex items-center gap-1.5 font-medium hover:text-brand-gold transition duration-150">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span>Call Now: 012 772 1616</span>
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur shadow-sm z-40 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-brand-blue text-white p-2.5 rounded-xl shadow-md flex items-center justify-center">
+                    <i data-lucide="car" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold font-display text-brand-bluedark leading-tight">Thompho's Driving School</h1>
+                    <p class="text-[10px] sm:text-xs text-slate-500 font-medium">Your Road to Success Starts Here</p>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm text-slate-600">
+                <a href="#hero" class="hover:text-brand-blue transition">Home</a>
+                <a href="#about" class="hover:text-brand-blue transition">About Us</a>
+                <a href="#services" class="hover:text-brand-blue transition">Driving Lessons</a>
+                <a href="#pricing" class="hover:text-brand-blue transition">Pricing</a>
+                <a href="#reviews" class="hover:text-brand-blue transition">Reviews</a>
+                <a href="#location" class="hover:text-brand-blue transition">Location</a>
+                <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:0127721616" class="border-2 border-brand-blue text-brand-blue font-semibold text-sm px-4 py-2 rounded-lg hover:bg-brand-blue/5 transition">Call Now</a>
+                <a href="#contact" class="bg-brand-blue hover:bg-brand-bluedark text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition">Book a Lesson</a>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-brand-blue hover:bg-slate-100 rounded-lg">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 py-4 space-y-3">
+            <a href="#hero" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Home</a>
+            <a href="#about" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">About Us</a>
+            <a href="#services" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Driving Lessons</a>
+            <a href="#pricing" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Pricing</a>
+            <a href="#reviews" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Reviews</a>
+            <a href="#location" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Location</a>
+            <a href="#contact" class="block py-2 px-3 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Contact</a>
+            <div class="pt-3 border-t border-slate-100 flex gap-2">
+                <a href="tel:0127721616" class="flex-1 text-center border border-brand-blue text-brand-blue font-semibold py-2.5 rounded-lg text-sm">Call Now</a>
+                <a href="#contact" class="flex-1 text-center bg-brand-blue text-white font-semibold py-2.5 rounded-lg text-sm" onclick="toggleMenu()">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-slate-950 text-white py-16 md:py-28 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/src/assets/images/hero_car_pretoria_1782830704716.jpg" alt="Driving School Hero" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-bluedark via-brand-bluedark/90 to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/20 text-brand-gold px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border border-brand-gold/30">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                    <span>Pretoria's Most Trusted K53 Driving School</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-tight tracking-tight">
+                    Learn to Drive with <span class="text-brand-gold">Confidence</span> and Pass Your Test First Time
+                </h2>
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
+                    Professional K53 Driving Lessons and Learner's Licence Training in Sunnyside, Pretoria. Join hundreds of successful licensed drivers.
+                </p>
+                
+                <!-- Trust Statistics -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-3">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-brand-gold">⭐ 4.8</div>
+                        <div class="text-[10px] sm:text-xs text-slate-300">Google Rating</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-white">115+</div>
+                        <div class="text-[10px] sm:text-xs text-slate-300">Verified Reviews</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-white">K53</div>
+                        <div class="text-[10px] sm:text-xs text-slate-300">Certified Instructors</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-white">Pretoria</div>
+                        <div class="text-[10px] sm:text-xs text-slate-300">Sunnyside Location</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                    <a href="#contact" class="bg-brand-gold hover:bg-brand-goldhover text-brand-bluedark font-bold py-3.5 px-6 rounded-xl shadow-lg transition text-center">Book Your First Lesson</a>
+                    <a href="https://wa.me/27727721616?text=Hi%20Thompho's%20Driving%20School,%20I'd%20like%20to%20enquire%20about%20booking%20driving%20lessons." target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
+                    <a href="tel:0127721616" class="border-2 border-white/30 hover:border-white text-white font-semibold py-3.5 px-6 rounded-xl text-center hover:bg-white/5 transition flex items-center justify-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <span>Call 012 772 1616</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 hidden lg:block relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-blue rounded-2xl blur opacity-30"></div>
+                <div class="relative bg-brand-bluedark/80 border border-white/10 p-6 rounded-2xl shadow-2xl space-y-4 text-center">
+                    <i data-lucide="star" class="w-12 h-12 text-brand-gold mx-auto animate-pulse"></i>
+                    <h3 class="text-xl font-bold font-display text-white">Why Sunnyside Trusts Us</h3>
+                    <p class="text-sm text-slate-300">We don't just teach you how to pass the test; we build safe habits for a lifetime of confident driving on South African roads.</p>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-around">
+                        <div>
+                            <p class="text-xs text-slate-400">First-Time Pass Rate</p>
+                            <p class="text-lg font-bold text-brand-gold">94%</p>
+                        </div>
+                        <div class="h-8 w-px bg-white/10"></div>
+                        <div>
+                            <p class="text-xs text-slate-400">Total Hours Guided</p>
+                            <p class="text-lg font-bold text-brand-gold">5,000+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF STRIP -->
+    <div class="bg-brand-blue text-white py-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs font-semibold uppercase tracking-wider text-brand-gold/90 mb-4">Why Pretoria Learners Choose Us</p>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-6 justify-center items-center">
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="award" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">Trusted Driving School</span>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">115+ Google Reviews</span>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="shield" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">K53 Training Method</span>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="smile" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">Patient Instructors</span>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">Sunnyside Central</span>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <i data-lucide="thumbs-up" class="w-5 h-5 text-brand-gold shrink-0"></i>
+                    <span class="text-xs sm:text-sm font-medium">High Student Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="text-brand-blue font-bold tracking-wider text-xs sm:text-sm uppercase flex items-center gap-2">
+                    <span class="w-8 h-0.5 bg-brand-blue"></span>
+                    <span>About Us</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">
+                    Pretoria's Trusted Driving School
+                </h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                    <p class="font-medium text-slate-800">Learning to drive should be simple, professional, and stress-free.</p>
+                    <p>At Thompho's Driving School, we are dedicated to helping learners gain confidence behind the wheel while mastering the skills needed to pass both their learner's and driver's licence tests.</p>
+                    <p>Our experienced instructors provide patient guidance, practical driving experience, and complete K53 preparation designed to help every student succeed.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 py-2">
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Friendly and Patient Instructors</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Structured Driving Lessons</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Learner's Licence Assistance</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Test Preparation Support</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Flexible Scheduling</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-blue shrink-0 mt-0.5"></i>
+                        <span class="text-sm font-medium text-slate-700">Affordable Packages</span>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-bluedark text-white font-semibold px-6 py-3 rounded-xl shadow transition text-sm">
+                        <span>Learn More About Us</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-6 relative">
+                <div class="absolute -top-4 -left-4 w-40 h-40 bg-brand-gold/10 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-4 -right-4 w-40 h-40 bg-brand-blue/10 rounded-full blur-2xl"></div>
+                
+                <div class="relative bg-slate-100 rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-slate-200">
+                    <img src="/src/assets/images/instructor_student_1782830719401.jpg" alt="About Thompho's Instructors" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 left-4 right-4 bg-brand-bluedark/90 backdrop-blur text-white p-4 rounded-xl border border-white/10">
+                        <p class="font-display font-bold text-sm">K53 Compliant Vehicles & Dual Controls</p>
+                        <p class="text-xs text-slate-300">All training vehicles are fitted with dual pedal controls to guarantee absolute safety during your training sessions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-16 md:py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="text-brand-blue font-bold tracking-wider text-xs sm:text-sm uppercase inline-flex items-center gap-2">
+                    <span class="w-6 h-0.5 bg-brand-blue"></span>
+                    <span>Our Services</span>
+                    <span class="w-6 h-0.5 bg-brand-blue"></span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">
+                    Our Driving Services
+                </h2>
+                <p class="text-sm sm:text-base text-slate-500">
+                    We offer structured courses tailored for learners at any stage of their driving journey, from complete beginners to drivers seeking a refresh.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- CARD 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-xl flex items-center justify-center text-2xl">🚦</div>
+                        <h3 class="text-lg font-bold font-display text-brand-bluedark leading-tight">Learner's Licence Preparation</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Prepare for your learner's licence with expert guidance, road sign training, and practice questions.</p>
+                    </div>
+                    <button onclick="selectService('learners')" class="mt-6 w-full py-2.5 bg-brand-blue/5 hover:bg-brand-blue text-brand-blue hover:text-white font-semibold rounded-lg text-xs sm:text-sm transition text-center block">Get Started</button>
+                </div>
+                <!-- CARD 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center text-2xl">🚗</div>
+                        <h3 class="text-lg font-bold font-display text-brand-bluedark leading-tight">Beginner Driving Lessons</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Learn the basics of driving safely and confidently in a controlled, student-friendly environment.</p>
+                    </div>
+                    <button onclick="selectService('beginner')" class="mt-6 w-full py-2.5 bg-brand-blue/5 hover:bg-brand-blue text-brand-blue hover:text-white font-semibold rounded-lg text-xs sm:text-sm transition text-center block">Get Started</button>
+                </div>
+                <!-- CARD 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center text-2xl">🛣️</div>
+                        <h3 class="text-lg font-bold font-display text-brand-bluedark leading-tight">K53 Licence Preparation</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Master all K53 test requirements including yard inspections, alley docking, parallel parking, and road driving.</p>
+                    </div>
+                    <button onclick="selectService('k53-prep')" class="mt-6 w-full py-2.5 bg-brand-blue/5 hover:bg-brand-blue text-brand-blue hover:text-white font-semibold rounded-lg text-xs sm:text-sm transition text-center block">Get Started</button>
+                </div>
+                <!-- CARD 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center text-2xl">🔄</div>
+                        <h3 class="text-lg font-bold font-display text-brand-bluedark leading-tight">Refresher Driving Lessons</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Perfect for nervous drivers or those returning to South African roads after a long hiatus.</p>
+                    </div>
+                    <button onclick="selectService('refresher')" class="mt-6 w-full py-2.5 bg-brand-blue/5 hover:bg-brand-blue text-brand-blue hover:text-white font-semibold rounded-lg text-xs sm:text-sm transition text-center block">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">What Makes Thompho's Driving School Different?</h2>
+                <p class="text-slate-500 text-sm sm:text-base">We prioritize safe driving techniques, customer care, and successful licensing results.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-3">
+                    <div class="bg-brand-blue text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg shadow">1</div>
+                    <h3 class="text-lg font-bold font-display text-slate-800">Experienced Instructors</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Our certified instructors focus on building confidence, driving etiquette, and developing robust defensive driving habits.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-brand-blue text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg shadow">2</div>
+                    <h3 class="text-lg font-bold font-display text-slate-800">Flexible Scheduling</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Book individual hourly lessons or bulk packages that fit perfectly around your busy school, varsity, or work commitments.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-brand-blue text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg shadow">3</div>
+                    <h3 class="text-lg font-bold font-display text-slate-800">Student-Focused</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Every lesson is personalized to your speed, skill level, and progress, helping you learn without pressure or anxiety.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-brand-blue text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg shadow">4</div>
+                    <h3 class="text-lg font-bold font-display text-slate-800">Excellent Reputation</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Trusted by hundreds of successful learners throughout Sunnyside and Pretoria, backed by a stellar 4.8-star Google rating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PACKAGES & CALCULATOR -->
+    <section id="pricing" class="py-16 md:py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">Affordable Lesson Rates & Packages</h2>
+                <p class="text-slate-500 text-sm sm:text-base">Transparent South African pricing with flexible volume discounts. Select your volume to calculate estimates.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-6">
+                    <h3 class="text-lg font-bold font-display text-slate-800 border-b border-slate-100 pb-3 flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-5 h-5 text-brand-blue"></i>
+                        <span>Fee Estimator</span>
+                    </h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="space-y-2">
+                            <label class="font-medium text-slate-700 block">Number of Lessons:</label>
+                            <div class="flex items-center gap-3">
+                                <button onclick="adjustLessons(-1)" class="w-9 h-9 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-lg transition">-</button>
+                                <span id="calc-lessons" class="font-mono text-lg font-bold text-brand-blue min-w-[30px] text-center">5</span>
+                                <button onclick="adjustLessons(1)" class="w-9 h-9 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-lg transition">+</button>
+                                <span class="text-slate-400 text-xs">(R200 per lesson)</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-2 border-t border-slate-100">
+                            <label class="flex items-center gap-2.5 cursor-pointer">
+                                <input type="checkbox" id="calc-learners" onchange="recalculatePrice()" class="rounded border-slate-300 text-brand-blue focus:ring-brand-blue w-4 h-4">
+                                <span class="font-medium text-slate-700">Add Learner's Licence Class (+R400)</span>
+                            </label>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2.5 cursor-pointer">
+                                <input type="checkbox" id="calc-carhire" onchange="recalculatePrice()" class="rounded border-slate-300 text-brand-blue focus:ring-brand-blue w-4 h-4">
+                                <span class="font-medium text-slate-700">Add Car Hire for Test Day (+R600)</span>
+                            </label>
+                        </div>
+
+                        <div class="bg-brand-blue/5 p-4 rounded-xl space-y-2 pt-4 border border-brand-blue/10">
+                            <div class="flex justify-between text-slate-600">
+                                <span>Base Lessons Total:</span>
+                                <span id="calc-base" class="font-semibold text-slate-800">R1000</span>
+                            </div>
+                            <div class="flex justify-between text-slate-600">
+                                <span>Extras Selected:</span>
+                                <span id="calc-extras" class="font-semibold text-slate-800">R0</span>
+                            </div>
+                            <div class="flex justify-between text-green-600" id="calc-discount-row">
+                                <span>Volume Discount:</span>
+                                <span id="calc-discount" class="font-semibold">-R50</span>
+                            </div>
+                            <div class="flex justify-between border-t border-brand-blue/20 pt-2 font-bold text-base text-brand-blue">
+                                <span>Estimated Total:</span>
+                                <span id="calc-total" class="font-mono">R950</span>
+                            </div>
+                        </div>
+
+                        <button onclick="applyEstimateToForm()" class="w-full bg-brand-blue hover:bg-brand-bluedark text-white font-bold py-2.5 rounded-lg text-sm transition shadow">Apply to Booking Form</button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Starter Pack</div>
+                            <h3 class="text-xl font-bold font-display text-brand-bluedark">Single Lesson</h3>
+                            <div class="text-3xl font-extrabold font-display text-slate-800">R200<span class="text-sm font-normal text-slate-400">/hr</span></div>
+                            <ul class="space-y-2 text-xs text-slate-500 pt-2">
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>1 Full Hour of Road Training</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Dual-Control Safety Vehicle</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Patient Certified Instructor</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackage(1)" class="mt-6 w-full py-2 border-2 border-brand-blue text-brand-blue font-bold rounded-lg text-xs hover:bg-brand-blue hover:text-white transition">Select</button>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow border-2 border-brand-gold flex flex-col justify-between relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-brand-bluedark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Value</div>
+                        <div class="space-y-4">
+                            <div class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Step-Up Pack</div>
+                            <h3 class="text-xl font-bold font-display text-brand-bluedark">10-Lesson Package</h3>
+                            <div class="text-3xl font-extrabold font-display text-slate-800">R1,800</div>
+                            <p class="text-xs text-brand-gold font-semibold">Save R200 instantly (10% Off!)</p>
+                            <ul class="space-y-2 text-xs text-slate-500">
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>10 Complete Lessons (K53)</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Complete Yard Inspection Training</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Mock Driver's Licence Test Run</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Pickup & Drop-off in Sunnyside</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackage(10)" class="mt-6 w-full py-2 bg-brand-gold hover:bg-brand-goldhover text-brand-bluedark font-bold rounded-lg text-xs transition">Select Package</button>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Pro Pass Pack</div>
+                            <h3 class="text-xl font-bold font-display text-brand-bluedark">20-Lesson Package</h3>
+                            <div class="text-3xl font-extrabold font-display text-slate-800">R3,400</div>
+                            <p class="text-xs text-green-600 font-semibold">Save R600 instantly (15% Off!)</p>
+                            <ul class="space-y-2 text-xs text-slate-500">
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>20 Complete Driving Lessons</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Dedicated K53 Yard & Road Training</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Free Learner's Licence Prep Class</li>
+                                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>Unlimited Pretoria CBD Pickups</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackage(20)" class="mt-6 w-full py-2 border-2 border-brand-blue text-brand-blue font-bold rounded-lg text-xs hover:bg-brand-blue hover:text-white transition">Select Package</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDENT REVIEWS -->
+    <section id="reviews" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">Student Success Stories</h2>
+                <p class="text-slate-500 text-sm sm:text-base">Join over 115+ licensed drivers who cleared their K53 tests with our guidance.</p>
+                <div class="inline-flex bg-slate-100 p-1 rounded-lg text-xs sm:text-sm font-medium gap-1">
+                    <button onclick="filterTestimonials('all')" id="tab-all" class="px-4 py-1.5 rounded-md bg-brand-blue text-white shadow-sm transition">All Reviews</button>
+                    <button onclick="filterTestimonials('learner')" id="tab-learner" class="px-4 py-1.5 rounded-md text-slate-600 hover:text-slate-800 transition">Learners Prep</button>
+                    <button onclick="filterTestimonials('driver')" id="tab-driver" class="px-4 py-1.5 rounded-md text-slate-600 hover:text-slate-800 transition">K53 Drivers</button>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="testimonials-grid">
+                <!-- REVIEW 1 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 transition" data-tag="driver">
+                    <div class="flex text-brand-gold gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i></div>
+                    <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"Had an amazing experience at this driving school. The instructors were professional and patient. I’m grateful for the guidance throughout the journey to getting my driver’s licence. Highly recommend!"</p>
+                    <div class="border-t border-slate-200/60 pt-3">
+                        <p class="font-bold text-slate-800 text-xs sm:text-sm">Thendo Ntavhanyeni</p>
+                        <p class="text-[10px] text-slate-400">Sunnyside, Pretoria</p>
+                    </div>
+                </div>
+                <!-- REVIEW 2 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 transition" data-tag="learner">
+                    <div class="flex text-brand-gold gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i></div>
+                    <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"I had the best experience at Thompho’s Driving Academy. I highly recommend you come here if you want the process of getting your learner's and driver's licence to be smooth."</p>
+                    <div class="border-t border-slate-200/60 pt-3">
+                        <p class="font-bold text-slate-800 text-xs sm:text-sm">Thato Malatji</p>
+                        <p class="text-[10px] text-slate-400">Pretoria Central</p>
+                    </div>
+                </div>
+                <!-- REVIEW 3 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 transition" data-tag="all">
+                    <div class="flex text-brand-gold gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i></div>
+                    <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"I got my driver's licence within 2 days. The instructors are amazing and very friendly."</p>
+                    <div class="border-t border-slate-200/60 pt-3">
+                        <p class="font-bold text-slate-800 text-xs sm:text-sm">Funi Rasikhinya</p>
+                        <p class="text-[10px] text-slate-400">Hatfield, Pretoria</p>
+                    </div>
+                </div>
+                <!-- REVIEW 4 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 transition" data-tag="driver">
+                    <div class="flex text-brand-gold gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i><i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i></div>
+                    <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"Thanks to their guidance, I passed my driving test on my first attempt and feel confident driving on my own."</p>
+                    <div class="border-t border-slate-200/60 pt-3">
+                        <p class="font-bold text-slate-800 text-xs sm:text-sm">Kootea Mukwevho</p>
+                        <p class="text-[10px] text-slate-400">Arcadia, Pretoria</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-10">
+                <button onclick="openReviewModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl border border-slate-300 transition text-sm">View All Google Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-16 md:py-24 bg-brand-bluedark text-white border-b border-brand-blue-light/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display">Start Driving in Three Simple Steps</h2>
+                <p class="text-slate-300 text-sm sm:text-base">We've simplified the entire process so you can focus entirely on gaining driving skills.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-1/2 left-[15%] right-[15%] h-0.5 bg-brand-blue-light/30 -translate-y-12 z-0"></div>
+                
+                <div class="relative bg-white/5 border border-white/10 p-6 rounded-2xl shadow-xl space-y-4 text-center z-10 hover:bg-white/10 transition">
+                    <div class="bg-brand-gold text-brand-bluedark w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto shadow-md">1</div>
+                    <div class="text-2xl">📞</div>
+                    <h3 class="text-lg font-bold font-display text-brand-gold">Contact Us</h3>
+                    <p class="text-xs sm:text-sm text-slate-300">Call 012 772 1616, WhatsApp Us, or submit a booking enquiry below to register your spot.</p>
+                </div>
+
+                <div class="relative bg-white/5 border border-white/10 p-6 rounded-2xl shadow-xl space-y-4 text-center z-10 hover:bg-white/10 transition">
+                    <div class="bg-brand-gold text-brand-bluedark w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto shadow-md">2</div>
+                    <div class="text-2xl">🚗</div>
+                    <h3 class="text-lg font-bold font-display text-brand-gold">Start Lessons</h3>
+                    <p class="text-xs sm:text-sm text-slate-300">Begin dynamic training sessions with professional certified instructors utilizing structured K53 methods.</p>
+                </div>
+
+                <div class="relative bg-white/5 border border-white/10 p-6 rounded-2xl shadow-xl space-y-4 text-center z-10 hover:bg-white/10 transition">
+                    <div class="bg-brand-gold text-brand-bluedark w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto shadow-md">3</div>
+                    <div class="text-2xl">🎉</div>
+                    <h3 class="text-lg font-bold font-display text-brand-gold">Pass Your Test</h3>
+                    <p class="text-xs sm:text-sm text-slate-300">Approach your K53 driver's licence test with perfect confidence and easily obtain your official drivers licence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">Success on the Road</h2>
+                <p class="text-slate-500 text-sm sm:text-base">Real highlights of our patient classes, vehicle fleet, and proud students receiving their driver's licences in Pretoria.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(0)">
+                    <img src="/src/assets/images/hero_car_pretoria_1782830704716.jpg" alt="Thompho's Branded Training Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(1)">
+                    <img src="/src/assets/images/instructor_student_1782830719401.jpg" alt="Practical Road Lessons" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600" alt="K53 Test Preparation" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="Learners Theory Classes" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="Successful Licensed Student" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] shadow-sm border border-slate-200" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600" alt="Practical Yard Parking Training" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                        <span class="text-white text-xs font-semibold uppercase bg-brand-blue/90 px-3 py-1.5 rounded-full">Enlarge View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="location" class="py-16 md:py-24 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-bluedark">Conveniently Located in Pretoria</h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
+                        <div class="bg-brand-blue/10 text-brand-blue p-2.5 rounded-lg shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Our Physical Office</p>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-1">81 Celliers Street, Sunnyside, Pretoria, 0002</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
+                        <div class="bg-brand-blue/10 text-brand-blue p-2.5 rounded-lg shrink-0"><i data-lucide="compass" class="w-5 h-5"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Service Coverage Areas</p>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-1">Sunnyside, Arcadia, Pretoria Central, Hatfield, Muckleneuk, Brooklyn, and surrounding Pretoria areas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://maps.google.com/?q=81+Celliers+Street+Sunnyside+Pretoria" target="_blank" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-bluedark text-white font-semibold px-6 py-3 rounded-xl shadow transition text-sm">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        <span>Get Driving Directions</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SIMULATED ROAD MAP -->
+            <div class="lg:col-span-7">
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-lg space-y-3">
+                    <div class="flex justify-between items-center bg-slate-50 p-2 rounded-lg text-xs font-mono text-slate-500 border border-slate-200/60">
+                        <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping"></span><span>Pretoria Map View</span></div>
+                        <span>81 Celliers St, Sunnyside</span>
+                    </div>
+                    <div class="bg-slate-200 h-80 rounded-xl relative overflow-hidden flex items-center justify-center border border-slate-300">
+                        <!-- Simulated SVG Map -->
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#EAECEE"/>
+                            
+                            <!-- Roads -->
+                            <line x1="50" y1="0" x2="50" y2="300" stroke="#FFF" stroke-width="20"/>
+                            <line x1="200" y1="0" x2="200" y2="300" stroke="#FFF" stroke-width="25"/>
+                            <line x1="350" y1="0" x2="350" y2="300" stroke="#FFF" stroke-width="20"/>
+                            
+                            <line x1="0" y1="80" x2="400" y2="80" stroke="#FFF" stroke-width="24"/>
+                            <line x1="0" y1="200" x2="400" y2="200" stroke="#FFF" stroke-width="30"/>
+                            
+                            <!-- Road Markings -->
+                            <line x1="200" y1="0" x2="200" y2="300" stroke="#F1C40F" stroke-width="2" stroke-dasharray="10,10"/>
+                            <line x1="0" y1="200" x2="400" y2="200" stroke="#F1C40F" stroke-width="2" stroke-dasharray="10,10"/>
+                            
+                            <!-- Blocks/Parks -->
+                            <rect x="70" y="10" width="110" height="50" rx="4" fill="#D5DBDB"/>
+                            <rect x="220" y="10" width="110" height="50" rx="4" fill="#D5DBDB"/>
+                            
+                            <rect x="70" y="110" width="110" height="70" rx="4" fill="#D5DBDB"/>
+                            <!-- SunnyPark Mall -->
+                            <rect x="220" y="110" width="110" height="70" rx="4" fill="#ABEBC6"/>
+                            <text x="275" y="145" font-family="sans-serif" font-size="10" font-weight="bold" fill="#27AE60" text-anchor="middle">SunnyPark Mall</text>
+                            
+                            <!-- Robert Sobukwe Street Label -->
+                            <text x="140" y="215" font-family="sans-serif" font-size="8" fill="#7F8C8D">Robert Sobukwe St</text>
+                            <!-- Celliers Street Label -->
+                            <text x="185" y="50" font-family="sans-serif" font-size="8" fill="#7F8C8D" transform="rotate(-90,185,50)">Celliers St</text>
+                            
+                            <!-- School Marker Point -->
+                            <circle cx="200" cy="115" r="14" fill="#003366" fill-opacity="0.2" class="animate-pulse"/>
+                            <circle cx="200" cy="115" r="6" fill="#D35400"/>
+                        </svg>
+                        
+                        <div class="absolute bg-brand-blue text-white px-3.5 py-2 rounded-xl shadow-lg border border-white/20 text-xs font-semibold top-1/2 left-1/2 -translate-x-[95%] -translate-y-[120%] flex flex-col gap-0.5 pointer-events-none">
+                            <span class="font-display font-bold">Thompho's Office</span>
+                            <span class="text-[10px] text-brand-gold">81 Celliers St</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                <!-- LEFT SIDE INFO -->
+                <div class="lg:col-span-5 bg-brand-blue text-white p-8 rounded-2xl flex flex-col justify-between shadow-lg">
+                    <div class="space-y-6">
+                        <h2 class="text-2xl sm:text-3xl font-bold font-display text-white">Ready to Get Started?</h2>
+                        <p class="text-slate-200 text-sm leading-relaxed">Fill out our quick booking enquiry, and our friendly instructors will reach out to schedule your first lesson. Your success is our complete priority!</p>
+                        
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-start gap-3.5">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-gold mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Phone Contact</p>
+                                    <p class="text-sm font-bold mt-0.5">012 772 1616</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-gold mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Office Address</p>
+                                    <p class="text-sm mt-0.5">81 Celliers Street, Sunnyside, Pretoria, 0002</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <i data-lucide="clock" class="w-5 h-5 text-brand-gold mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Business Hours</p>
+                                    <p class="text-sm mt-0.5">Monday – Saturday: 08:00 – 17:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-white/10 mt-8 space-y-3">
+                        <p class="text-xs text-slate-300">Need immediate help? Contact our customer support via WhatsApp:</p>
+                        <a href="https://wa.me/27727721616?text=Hi%20Thompho's%20Driving%20School,%20I'd%20like%20to%20register%20now." target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            <span>Chat on WhatsApp Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE FORM -->
+                <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-lg sm:text-xl font-bold font-display text-brand-bluedark">WhatsApp Booking Form</h3>
+                    <p class="text-xs text-slate-500">Your details will prepare a pre-filled direct WhatsApp message to chat and schedule instantly.</p>
+                    
+                    <form id="enquiry-form" class="space-y-4 text-sm" onsubmit="handleFormSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="font-semibold text-slate-700">Full Name</label>
+                                <input type="text" id="form-name" required placeholder="John Doe" class="w-full bg-white border border-slate-300 rounded-lg py-2.5 px-3.5 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="font-semibold text-slate-700">Phone Number</label>
+                                <input type="tel" id="form-phone" required placeholder="082 123 4567" class="w-full bg-white border border-slate-300 rounded-lg py-2.5 px-3.5 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="font-semibold text-slate-700">Email Address</label>
+                            <input type="email" id="form-email" required placeholder="john@example.com" class="w-full bg-white border border-slate-300 rounded-lg py-2.5 px-3.5 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="font-semibold text-slate-700">Service Needed</label>
+                            <select id="form-service" required class="w-full bg-white border border-slate-300 rounded-lg py-2.5 px-3.5 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition cursor-pointer">
+                                <option value="">-- Select a Service --</option>
+                                <option value="Learner's Licence Prep">Learner's Licence Preparation</option>
+                                <option value="Beginner Driving Lessons">Beginner Driving Lessons</option>
+                                <option value="K53 Driving Test Prep">K53 Driver's Licence Preparation</option>
+                                <option value="Refresher Lessons">Refresher Driving Lessons</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="font-semibold text-slate-700">Your Message (Include preferred lesson times or package size)</label>
+                            <textarea id="form-message" rows="3" required placeholder="Hi Thompho's, I would like to book a package of..." class="w-full bg-white border border-slate-300 rounded-lg py-2.5 px-3.5 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue outline-none transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition shadow-md flex items-center justify-center gap-2">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            <span>Chat on WhatsApp to Book</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="relative bg-brand-bluedark text-white py-20 text-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/src/assets/images/hero_car_pretoria_1782830704716.jpg" alt="Driving School CTA" class="w-full h-full object-cover object-center opacity-10">
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 space-y-6 z-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-display leading-tight">Your Driver's Licence Journey Starts Today</h2>
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">Join the hundreds of successful students who have successfully earned their licenses with Thompho's Driving School in Pretoria.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 pt-4">
+                <a href="#contact" class="bg-brand-gold hover:bg-brand-goldhover text-brand-bluedark font-bold px-6 py-3.5 rounded-xl shadow-lg transition w-full sm:w-auto">Book Your Lesson</a>
+                <a href="tel:0127721616" class="border border-white/20 hover:border-white text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-white/5 transition w-full sm:w-auto flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>Call 012 772 1616</span>
+                </a>
+                <a href="https://wa.me/27727721616?text=Hi%20Thompho's%20Driving%20School,%20I'd%20like%20to%20enquire%20about..." target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg transition w-full sm:w-auto">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white pt-12 pb-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-8 pb-10 border-b border-white/5">
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold font-display text-white">🚗 Thompho's Driving School</h3>
+                <p class="text-xs text-slate-400 leading-relaxed max-w-xs">Professional Driving Lessons & K53 Training in Sunnyside, Pretoria. Building safe and extremely confident drivers since inception.</p>
+            </div>
+            
+            <div class="space-y-3">
+                <p class="font-bold font-display text-sm">Quick Links</p>
+                <div class="grid grid-cols-2 gap-2 text-xs text-slate-400">
+                    <a href="#hero" class="hover:text-brand-gold transition">Home</a>
+                    <a href="#about" class="hover:text-brand-gold transition">About Us</a>
+                    <a href="#services" class="hover:text-brand-gold transition">Services</a>
+                    <a href="#pricing" class="hover:text-brand-gold transition">Pricing</a>
+                    <a href="#reviews" class="hover:text-brand-gold transition">Reviews</a>
+                    <a href="#location" class="hover:text-brand-gold transition">Location</a>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-400">
+                <p class="font-bold font-display text-sm text-white">Contact & Support</p>
+                <p class="flex items-center gap-2"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-gold"></i><span>012 772 1616</span></p>
+                <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-gold shrink-0"></i><span>81 Celliers Street, Sunnyside, Pretoria</span></p>
+                <p class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-brand-gold"></i><span>Monday – Saturday: 08:00 – 17:00</span></p>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs text-slate-500 font-medium">
+            <p>© 2026 Thompho's Driving School. All Rights Reserved. Prepared for direct GitHub Pages deployment.</p>
+            <div class="flex gap-4">
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- REVIEW MODAL -->
+    <div id="review-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 relative max-h-[85vh] overflow-y-auto space-y-4">
+            <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="text-xl font-bold font-display text-brand-bluedark border-b border-slate-100 pb-3 flex items-center gap-2">
+                <span>⭐ Google Reviews (115+ Students)</span>
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="flex text-brand-gold gap-0.5 mb-1.5"><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i></div>
+                    <p class="text-xs text-slate-600">"Excellent service. The patience they show on first timers is incredible. Best school in Sunnyside."</p>
+                    <p class="text-[10px] font-bold text-slate-800 mt-2">— Ntando Dube</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="flex text-brand-gold gap-0.5 mb-1.5"><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i></div>
+                    <p class="text-xs text-slate-600">"Cleared my yard parallel parking test on first go! Very clear instructions on K53."</p>
+                    <p class="text-[10px] font-bold text-slate-800 mt-2">— Sipho Ndlovu</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="flex text-brand-gold gap-0.5 mb-1.5"><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i></div>
+                    <p class="text-xs text-slate-600">"Highly recommended driving academy. They help you from booking the date to getting the licence smoothly."</p>
+                    <p class="text-[10px] font-bold text-slate-800 mt-2">— Amanda Naidoo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="hidden fixed inset-0 bg-black/95 z-50 flex flex-col justify-between p-4" onclick="closeLightboxOutside(event)">
+        <div class="flex justify-between items-center text-white py-2 z-10">
+            <span id="lightbox-counter" class="text-sm font-semibold tracking-wide bg-white/10 px-3 py-1 rounded-full">1 / 6</span>
+            <button onclick="closeLightbox()" class="text-slate-300 hover:text-white p-2 bg-white/10 hover:bg-white/20 rounded-full transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <div class="flex items-center justify-between w-full flex-1 max-w-5xl mx-auto gap-4">
+            <button onclick="changeLightboxImage(-1)" class="text-slate-300 hover:text-white p-3 bg-white/5 hover:bg-white/15 rounded-full transition cursor-pointer shrink-0">
+                <i data-lucide="chevron-left" class="w-8 h-8"></i>
+            </button>
+            <div class="max-h-[70vh] flex flex-col items-center justify-center">
+                <img id="lightbox-img" src="" alt="Enlarged" class="max-w-full max-h-[60vh] object-contain rounded-xl shadow-2xl">
+                <p id="lightbox-title" class="text-white text-center text-sm font-medium mt-4 max-w-lg"></p>
+            </div>
+            <button onclick="changeLightboxImage(1)" class="text-slate-300 hover:text-white p-3 bg-white/5 hover:bg-white/15 rounded-full transition cursor-pointer shrink-0">
+                <i data-lucide="chevron-right" class="w-8 h-8"></i>
+            </button>
+        </div>
+        <div class="text-center text-xs text-slate-400 py-3">Press Esc or click outside to dismiss.</div>
+    </div>
+
+    <!-- MAIN JAVASCRIPT FOR INTERACTIONS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+        document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+
+        // Service Preselector Handler
+        function selectService(id) {
+            const serviceSelect = document.getElementById('form-service');
+            const elementMap = {
+                'learners': "Learner's Licence Prep",
+                'beginner': "Beginner Driving Lessons",
+                'k53-prep': "K53 Driving Test Prep",
+                'refresher': "Refresher Lessons"
+            };
+            if (elementMap[id]) {
+                serviceSelect.value = elementMap[id];
+            }
+            
+            // Scroll to Form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Pricing Estimator state
+        let lessonsCount = 5;
+        function adjustLessons(amount) {
+            lessonsCount = Math.max(1, lessonsCount + amount);
+            document.getElementById('calc-lessons').innerText = lessonsCount;
+            recalculatePrice();
+        }
+
+        function selectPackage(count) {
+            lessonsCount = count;
+            document.getElementById('calc-lessons').innerText = lessonsCount;
+            
+            if (count === 1) {
+                document.getElementById('calc-learners').checked = false;
+                document.getElementById('calc-carhire').checked = false;
+            } else if (count === 10) {
+                document.getElementById('calc-learners').checked = false;
+                document.getElementById('calc-carhire').checked = false;
+            } else if (count === 20) {
+                document.getElementById('calc-learners').checked = true;
+                document.getElementById('calc-carhire').checked = false;
+            }
+            
+            recalculatePrice();
+            
+            // Scroll to calculator
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function recalculatePrice() {
+            const isLearnersChecked = document.getElementById('calc-learners').checked;
+            const isCarhireChecked = document.getElementById('calc-carhire').checked;
+            
+            const baseLessonsCost = lessonsCount * 200;
+            let extrasCost = 0;
+            if (isLearnersChecked) extrasCost += 400;
+            if (isCarhireChecked) extrasCost += 600;
+            
+            let discountRate = 0;
+            if (lessonsCount >= 20) discountRate = 0.15;
+            else if (lessonsCount >= 10) discountRate = 0.10;
+            else if (lessonsCount >= 5) discountRate = 0.05;
+            
+            const discountAmount = Math.round(baseLessonsCost * discountRate);
+            const finalEstimate = (baseLessonsCost - discountAmount) + extrasCost;
+            
+            document.getElementById('calc-base').innerText = 'R' + baseLessonsCost;
+            document.getElementById('calc-extras').innerText = 'R' + extrasCost;
+            
+            const discountRow = document.getElementById('calc-discount-row');
+            if (discountAmount > 0) {
+                discountRow.classList.remove('hidden');
+                document.getElementById('calc-discount').innerText = '-R' + discountAmount;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+            
+            document.getElementById('calc-total').innerText = 'R' + finalEstimate;
+        }
+
+        function applyEstimateToForm() {
+            const lessons = lessonsCount;
+            const isLearnersChecked = document.getElementById('calc-learners').checked;
+            const isCarhireChecked = document.getElementById('calc-carhire').checked;
+            const total = document.getElementById('calc-total').innerText;
+            
+            const serviceSelect = document.getElementById('form-service');
+            serviceSelect.value = "Beginner Driving Lessons";
+            
+            const messageArea = document.getElementById('form-message');
+            messageArea.value = "Hi Thompho's, I used your pricing estimator. I would like to book a custom package of " + lessons + " driving lessons" + 
+                (isLearnersChecked ? " + Learner's Licence Class" : "") + 
+                (isCarhireChecked ? " + Car Hire on test day" : "") + 
+                ". The calculated estimate is " + total + ". Please reach back to schedule!";
+                
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Initial Calculation
+        recalculatePrice();
+
+        // Testimonial Filtering
+        function filterTestimonials(tag) {
+            const grid = document.getElementById('testimonials-grid');
+            const cards = grid.children;
+            
+            const tabs = ['all', 'learner', 'driver'];
+            tabs.forEach(tab => {
+                const tabBtn = document.getElementById('tab-' + tab);
+                if (tab === tag) {
+                    tabBtn.className = "px-4 py-1.5 rounded-md bg-brand-blue text-white shadow-sm transition";
+                } else {
+                    tabBtn.className = "px-4 py-1.5 rounded-md text-slate-600 hover:text-slate-800 transition";
+                }
+            });
+
+            for (let card of cards) {
+                const cardTag = card.getAttribute('data-tag');
+                if (tag === 'all' || cardTag === tag || (tag === 'driver' && cardTag === 'all')) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            }
+        }
+
+        // Review Modal
+        function openReviewModal() {
+            document.getElementById('review-modal').classList.remove('hidden');
+            document.body.classList.add('lightbox-active');
+        }
+        function closeReviewModal() {
+            document.getElementById('review-modal').classList.add('hidden');
+            document.body.classList.remove('lightbox-active');
+        }
+
+        // Form Submit to WhatsApp Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const email = document.getElementById('form-email').value;
+            const service = document.getElementById('form-service').value;
+            const message = document.getElementById('form-message').value;
+
+            const text = "Hi Thompho's Driving School!\n\n" +
+                "I'd like to book a driving lesson with the following details:\n" +
+                "- *Name*: " + name + "\n" +
+                "- *Phone*: " + phone + "\n" +
+                "- *Email*: " + email + "\n" +
+                "- *Service*: " + service + "\n\n" +
+                "*Message*:\n" + message;
+
+            const whatsappUrl = "https://wa.me/27727721616?text=" + encodeURIComponent(text);
+            
+            alert("Prepared WhatsApp booking details! Redirecting you to chat on WhatsApp...");
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Gallery Lightbox
+        const galleryImages = [
+            { src: "/src/assets/images/hero_car_pretoria_1782830704716.jpg", title: "Thompho's Branded Training Vehicle" },
+            { src: "/src/assets/images/instructor_student_1782830719401.jpg", title: "Practical Road Lessons" },
+            { src: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=1200", title: "K53 Test Preparation" },
+            { src: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200", title: "Learners Theory Classes" },
+            { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200", title: "Successful Licensed Student" },
+            { src: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=1200", title: "Practical Yard Parking Training" }
+        ];
+
+        let currentLightboxIndex = 0;
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+            document.body.classList.add('lightbox-active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+            document.body.classList.remove('lightbox-active');
+        }
+
+        function closeLightboxOutside(event) {
+            if (event.target.id === 'lightbox-modal') {
+                closeLightbox();
+            }
+        }
+
+        function changeLightboxImage(direction) {
+            currentLightboxIndex = (currentLightboxIndex + direction + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            const img = document.getElementById('lightbox-img');
+            const title = document.getElementById('lightbox-title');
+            const counter = document.getElementById('lightbox-counter');
+            
+            img.src = galleryImages[currentLightboxIndex].src;
+            title.innerText = galleryImages[currentLightboxIndex].title;
+            counter.innerText = (currentLightboxIndex + 1) + " / " + galleryImages.length;
+        }
+
+        // Escape Key close modals
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+                closeReviewModal();
+            }
+        });
+    </script>
+</body>
+</html>
